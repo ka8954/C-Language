@@ -1,1 +1,20 @@
 
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int marks[10];
+    int i,nos,Marks=0;
+    scanf("%d",&nos);
+    for (i=1;i<=nos;i++)
+    {
+        scanf("%d",&marks[i]);
+    }
+    for(i=1; i<=nos; i++)
+    {
+         
+        Marks+=marks[i];
+    }
+     printf("sum of array is : %d",Marks);
+    return 0;
+}
