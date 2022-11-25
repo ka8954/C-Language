@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+}*Head;
+
+void printmiddle (struct node *ptr)
+{
+    int count=0;
+    while(ptr !=NULL)
+    {
+    count++;
+    ptr=ptr->next;
+    }
+    struct node *temp;
+    temp = Head;
+    for(int i=0;i<count/2;i++)
+    {
+        temp=temp->next;
+    }
+    printf("\nThe Middle Node of the Linked List is : %d",temp->data);
+}
+int main()
+{
+    struct node *Second;
+    struct node *Third;
+    struct node *Fourth;
+    struct node *Fifth;
+    struct node *Sixth;
+    
+    Head = (struct node*) malloc(sizeof(struct node));
+    Second = (struct node*) malloc(sizeof(struct node));
+    Third = (struct node*) malloc(sizeof(struct node));
+    Fourth = (struct node*) malloc(sizeof(struct node));
+    Fifth = (struct node*) malloc(sizeof(struct node));
+    Sixth = (struct node*) malloc(sizeof(struct node));
+    
+    Head->data = 10;
+    Head->next = Second;
+    
+    Second->data = 20;
+    Second->next = Third;
+    
+    Third->data = 30;
+    Third->next = Fourth;
+    
+    Fourth->data = 40;
+    Fourth->next = Fifth;
+    
+    Fifth->data = 50;
+    Fifth->next = Sixth;
+    
+    Sixth->data = 60;
+    Sixth->next = NULL;
+    
+    printmiddle(Head);
+    return 0;
+}
+
